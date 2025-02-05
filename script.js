@@ -12,25 +12,25 @@ const boton2 = document.getElementById("boton2");
 let suma = 0;
 
 function Agregar() {
-  const inputValue = document.getElementById("Numero").value;
+    const inputValue = document.getElementById("Numero").value;
 
-  const listaUl = document.getElementById("lista");
-  const elementoLista = document.createElement("li");
-  elementoLista.innerText = "El numero es: " + inputValue;
-  listaUl.appendChild(elementoLista);
+    const listaUl = document.getElementById("lista");
+    const elementoLista = document.createElement("li");
+    elementoLista.innerText = "El numero es: " + inputValue;
+    listaUl.appendChild(elementoLista);
 
-  suma += Number(inputValue);
+    suma += Number(inputValue);
 }
 
 function Resultado() {
-  const elemento = document.getElementById("titulo");
-  elemento.innerText = "La suma de los valores es: " + suma;
+    const elemento = document.getElementById("titulo");
+    elemento.innerText = "La suma de los valores es: " + suma;
 }
 
 boton.addEventListener("click", Agregar);
 boton2.addEventListener("click", Resultado);
 /* 
-const elemento = document.getElementById("titulo"); //
+
 elemento.innerHTML = "La suma de los valores es <span>" + suma + "</span>"; //
 
 const elemento = document.getElementById("titulo"); //
