@@ -2,4 +2,12 @@
     text-align: center;
     }
 
-   
+    #boton {
+        
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background-color: green;
+            color: white;
+            font-size: 15px;
+    }
