@@ -6,35 +6,21 @@ const elemento = document.getElementById("titulo");
 elemento.style.background = color;
 elemento.innerText = "Hola, " + nombre + "!";*/
 
-const boton = document.getElementById("boton");
-const boton2 = document.getElementById("boton2");
+const elemento = document.getElementById("contrasenya");
 
-let suma = 0;
-
-function Agregar() {
-    const inputValue = document.getElementById("Numero").value;
-
-    const listaUl = document.getElementById("lista");
-    const elementoLista = document.createElement("li");
-    elementoLista.innerText = "El numero es: " + inputValue;
-    listaUl.appendChild(elementoLista);
-
-    suma += Number(inputValue);
+function contraseña() {
+    let longitud = elemento.value.length;
+    const texto = document.getElementById("texto");
+    if (longitud <= 8) {
+        texto.innerText = "La contraseña es demasiado corta";
+        texto.className = "inferior";
+    } else if (longitud > 8 && longitud < 10) {
+        texto.innerText = "La contraseña no es del todo segura";
+        texto.className = "similar";
+    } else {
+        texto.className = "superior";
+        texto.innerText = "La contraseña es segura";
+    }
 }
 
-function Resultado() {
-    const elemento = document.getElementById("titulo");
-    elemento.innerText = "La suma de los valores es: " + suma;
-}
-
-boton.addEventListener("click", Agregar);
-boton2.addEventListener("click", Resultado);
-/* 
-
-elemento.innerHTML = "La suma de los valores es <span>" + suma + "</span>"; //
-
-const elemento = document.getElementById("titulo"); //
-elemento.innerHTML = "La suma de los valores es <span>" + suma + "</span>"; //
-
-boton.addEventListener("click", Presionaboton); //
- */
+elemento.addEventListener("input", contraseña);
